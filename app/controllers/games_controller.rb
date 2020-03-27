@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
 
+
   def index 
     games = Game.all 
     render json: games
@@ -12,15 +13,30 @@ class GamesController < ApplicationController
 
   def create 
     new_game = Game.create(new_game_params)
-    # byebug
     render json: new_game
   end
 
   def update
     current_game = Game.find(params[:id])
     current_game.update(update_game_params)
-
+    render json: current_game
   end
+
+  def destroy 
+    current_game = Game.find(params[:id])
+    current_game.destroy()
+  end
+
+  # def remove_bad_games
+  #   # delete games that were initiated but never saved. (person didnt hit pause)
+  #   # debugger
+    
+  # end
+
+  # def stats 
+  #   stats = Game.top_games 
+  #   render  json: stats
+  # end
 
   private
 
