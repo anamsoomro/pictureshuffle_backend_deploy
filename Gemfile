@@ -8,7 +8,10 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # rails 6.02 runs the verify_authenticity_token as a before_action
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# gem 'sqlite3', '~> 1.4'
+
+# postgreSQL for heroku
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
